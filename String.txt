@@ -1,0 +1,61 @@
+Program 1:
+
+import java.io.*;
+public class String1
+{
+    public static void main(String[] args)
+    {
+        String str = "Hello World";
+ 
+        System.out.println("The size of  the string is"+ str.length());
+    }
+}
+
+
+Program 2:
+
+import java.io.*;
+class String2
+{  
+ public static void main(String args[])
+  {  
+   String s1=" Hello";  
+   String s2="How are you?";  
+   String s3=s1.concat(s2);  
+   System.out.println(s3); 
+  }  
+}  
+
+
+Program 3:
+
+import java.io.*;
+public class String3
+{
+
+   public static void main(String args[])
+ {
+   String str = ("Java String pool refers to collection of Strings which are stored in heap memory");
+   String str1=("Java String pool refers to collection of strings which are stored in heap memory ");
+
+   System.out.print("After coverting into upper case :" );
+   System.out.println(str.toUpperCase() );
+
+   System.out.print("After coverting into lower case :" );
+   System.out.println(str.toLowerCase() );
+
+  String replaceString=str.replace('a','$');
+  System.out.println(replaceString);  
+
+  if (Str.contains("collection")) 
+        {
+            System.out.println("The word collection is found in given string");
+        } 
+       else 
+      {
+            System.out.println("The word collection is not found in the string");
+        }
+
+  System.out.println(str.equals(str1));
+   }
+}
