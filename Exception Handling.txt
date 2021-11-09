@@ -1,0 +1,127 @@
+//Program 1:
+
+import java.util.Scanner;
+public class ArithmeticEx 
+{
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the Number 1:");
+		int num1 = scanner.nextInt();
+		System.out.println("Enter the Number 2:");
+		int num2 = scanner.nextInt();
+		try 
+		{
+			int res=num1/num2;
+			System.out.println("The output is "+res);
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println("Kindly don't provide the Number 2 value zero");
+			
+		}
+
+	}
+
+}
+
+
+//Program 2
+
+public class UnsupportedOperationExcepion extends Throwable 
+{
+
+	public String toString() 
+	{
+		return "UnsupportedOperationExcepion";
+	}
+	
+
+}
+
+
+import java.util.Scanner;
+
+public class Exception1 
+{
+
+	public static void main(String[] args) throws UnsupportedOperationExcepion {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the Number1");
+		int num1 = scanner.nextInt();
+		System.out.println("Enter the Number 2");
+		int num2 = scanner.nextInt();
+		if(num2==0) 
+		{
+			throw new UnsupportedOperationExcepion(); 
+		}
+		int res=num1/num2;
+		System.out.println(res);
+
+	}
+
+}
+
+
+//Program 3:
+
+public class IllegalBankTransactionException extends Throwable 
+{
+	public String toString() 
+	{
+		return "IllegalBankTransactionException";
+	}
+
+
+
+}
+public class InsufficientBalanceException extends Throwable 
+	{
+	public String toString()
+	 {
+		return "InsufficientBalanceException";
+	}
+
+}
+
+
+import java.util.Scanner;
+
+public class SavingsAccount {
+
+	public static void main(String[] args) throws IllegalBankTransactionException,InsufficientBalanceException 
+	{
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter your deposit");
+		double deposit = scanner.nextDouble();
+		double bal = deposit;
+		bal+=deposit;
+		System.out.println("Enter your withdraw Amount");
+		double withdraw = scanner.nextDouble();
+		withdraw( withdraw,bal);
+		
+
+	}
+
+	private static void withdraw(double withdraw, double balance) throws IllegalBankTransactionException,InsufficientBalanceException
+	 {
+		if(withdraw <= bal && withdraw >0) 
+		{
+			System.out.println("Hi Take your amount "+ bal);
+			
+		}
+		else if(withdraw <0) 
+		{
+			throw new IllegalBankTransactionException();
+			
+		}
+		else if(withdraw > bal || withdraw ==0) 
+		{
+			throw new InsufficientBalanceException ();
+			
+		}
+		
+	}
+
+	
+}
